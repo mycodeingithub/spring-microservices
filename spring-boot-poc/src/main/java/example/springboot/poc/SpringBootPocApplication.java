@@ -10,7 +10,11 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ConfigurableApplicationContext;
 
-
+/**
+ * 
+ * @author Karthik Kamarthi
+ *
+ */
 @SpringBootApplication
 @EnableConfigurationProperties(BarProperties.class)
 public class SpringBootPocApplication {
