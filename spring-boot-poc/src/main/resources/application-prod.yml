@@ -1,0 +1,5 @@
+demo: 
+  property: Life is also Awesome in Prod environment...
+management:
+  security:
+    enabled: false

@@ -1,0 +1,38 @@
+spring:
+  profiles:
+    active: profile-1
+
+---
+demo:
+  property: This is profile one....
+management:
+  security:
+    enabled: false
+bar:
+  value: 10
+  
+spring:
+  datasource:
+    url: jdbc:h2:file:~/test;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password: 
+    driver-class-name: org.h2.Driver
+  profiles: profile-1
+
+---
+demo:
+  property: This is profile two...
+management:
+  security:
+    enabled: false
+bar:
+  value: 20
+  
+spring:
+  datasource:
+    url: jdbc:h2:file:~/test;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password: 
+    driver-class-name: org.h2.Driver
+  profiles: profile-2
+    
