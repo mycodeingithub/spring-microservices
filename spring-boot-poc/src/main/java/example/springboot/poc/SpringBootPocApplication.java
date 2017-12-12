@@ -6,66 +6,51 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ConfigurableApplicationContext;
 
 /**
  * 
  * @author Karthik Kamarthi
+ * Basic Spring Boot Application reads property from application properties.
+ * You can find out 3 ways of retrieving the configuration values.
  *
  */
 @SpringBootApplication
 @EnableConfigurationProperties(BarProperties.class)
 public class SpringBootPocApplication {
 	
-	@Autowired
-	private BarProperties barProperties;
-	
 	@Value("${demo.property}")
 	private  String demoProperty;
 	
 	@Autowired
+	private BarProperties barProperties;
+	
+	@Autowired
 	private DataSource dataSource;
 	
-
-	public static void main(String[] args) {		
+	public static void main(String[] args) {
+		
 		SpringApplication app = new SpringApplication(SpringBootPocApplication.class);
         ConfigurableApplicationContext ctx = app.run(args);
+        
         SpringBootPocApplication springBootPocApplication= ctx.getBean(SpringBootPocApplication.class);
-        springBootPocApplication.printExternalizeConfig();
-        springBootPocApplication.pringTypeSafeProperty();
-        springBootPocApplication.printDataSource();
+        System.out.println(springBootPocApplication.getDemoProperty());
+        System.out.println(springBootPocApplication.getBarProperties().getValue());
+        System.out.println(springBootPocApplication.getDataSource());
 		
 	}
 	
-	private void printExternalizeConfig(){
-		System.out.println(demoProperty);
+	public String getDemoProperty() {
+		return demoProperty;
 	}
-	
-	private void pringTypeSafeProperty(){
-		System.out.println(barProperties.getValue());
+
+	public BarProperties getBarProperties() {
+		return barProperties;
 	}
-	
-	private void printDataSource(){
-		System.out.println(dataSource);
-	}	
+
+	public DataSource getDataSource() {
+		return dataSource;
+	}
 	
 }
-
-@ConfigurationProperties("bar")
-class BarProperties {
-	private Integer value;
-
-	public Integer getValue() {
-		return value;
-	}
-
-	public void setValue(Integer value) {
-		this.value = value;
-	}
-	
-	
-}
-
-

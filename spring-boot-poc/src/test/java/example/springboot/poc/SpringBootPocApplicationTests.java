@@ -1,9 +1,11 @@
-package com.infomover.poc;
+package example.springboot.poc;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import junit.framework.Assert;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -11,6 +13,7 @@ public class SpringBootPocApplicationTests {
 
 	@Test
 	public void contextLoads() {
+		Assert.assertTrue(true);
 	}
 
 }
