@@ -1,0 +1,5 @@
+info:
+  description: Spring Cloud COnfig
+  url: https://github.com/jaydattdesai/Spring-cloud-config
+foo: application default
+
