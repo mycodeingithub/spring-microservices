@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+
+  edge-server:
+    build: ./employee-zuul-client
+    ports:
+    - "8090:8090"
+    links:
+    - load-balancer
+  load-balancer:
+    build: ./employee-ribbon-client
+    links:
+    - discovery-client
+  discovery-client:
+    build: ./employee-eureka-client    
+    links:
+    - discovery-server
+  discovery-server:
+    build: ./employee-eureka-server
+    
+
+    

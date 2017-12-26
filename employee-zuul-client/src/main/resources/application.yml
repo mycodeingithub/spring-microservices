@@ -1,0 +1,21 @@
+security:
+  user:
+    password: password
+
+zuul:
+  routes:
+    employees:
+      service-id: load-balancer-feign
+spring:
+  application:
+    name: employee-zuul-application
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+
+
+server:
+  port: 8090

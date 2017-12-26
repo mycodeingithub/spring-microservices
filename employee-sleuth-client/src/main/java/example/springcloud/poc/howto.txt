@@ -1,0 +1,10 @@
+do not consider this line: donwload zipking server docker image from: https://hub.docker.com/r/openzipkin/zipkin/
+run it: docker run -d -p 9411:9411 openzipkin/zipkin
+start the app
+
+
+or
+
+
+wget -O zipkin.jar 'https://search.maven.org/remote_content?g=io.zipkin.java&a=zipkin-server&v=LATEST&c=exec'
+java -jar zipkin.jar

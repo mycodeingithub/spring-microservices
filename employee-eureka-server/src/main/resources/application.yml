@@ -1,0 +1,45 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: employee-server
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+
+#spring:
+#  profiles:
+#    active: server-1
+#eureka:
+#  client:
+#    register-with-eureka: false
+#    fetch-registry: false
+#---
+#
+#server:
+#  port: 8761
+#spring:
+#  application:
+#    name: employee-server
+#  profiles: server-1
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8762/eureka/   
+#
+#---
+#
+#server:
+#  port: 8762
+#spring:
+#  application:
+#    name: employee-server
+#  profiles: server-2
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka/
+#
