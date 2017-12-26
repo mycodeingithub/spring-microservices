@@ -1,4 +1,4 @@
-package com.infomover.poc;
+package example.springcloud.poc;
 
 import javax.servlet.http.HttpServletRequest;
 

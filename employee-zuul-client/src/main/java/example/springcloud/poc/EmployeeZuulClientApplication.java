@@ -1,4 +1,4 @@
-package com.infomover.poc;
+package example.springcloud.poc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
