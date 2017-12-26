@@ -1,0 +1,5 @@
+Add jar for hot swapping or hot deployment: 
+<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
